@@ -9,8 +9,7 @@ body {
 }
 
 .top {
-    margin: 0 auto;
-    max-width: 1600px;    
+    margin: 0 auto;      
 }
 .container {
     max-width: 1140px;
@@ -60,7 +59,8 @@ body {
 }
 .brand_block {     
     display: flex;
-    justify-content: center;
+    justify-content: left;
+    padding-left: 60px;
     align-items: center;
     background-color: #F1E4E6;
 }
@@ -261,7 +261,7 @@ body {
     padding-top: 18px;
     padding-bottom: 20px;
 }
-.product_button {
+.products_button {
     text-align: center;
     padding-top: 48.5px;
 }
@@ -275,7 +275,6 @@ body {
 }
 .benefits {
     background-color: #222224;
-    max-width: 1600px;
     margin: 0 auto;
 }
 .benefits_block {
@@ -305,10 +304,14 @@ body {
     line-height: 17px;
     color: #FBFBFB;
 }
+.footer {
+    margin: 0 auto;
+    
+}
 .footer_landing {
-    background-image: url(img/photosubscribe.png);
+    background: url(img/photo_subscribe.jpg);
     background-repeat: no-repeat;
-    background-position: center;
+    background-size: cover;    
 }
 .feedback {    
     display: flex;
@@ -378,7 +381,6 @@ blockquote {
 }
 .footer_copy_block {
     background-color: #222224;
-    max-width: 1600px;
     margin: 0 auto;
 }
 .footer_copy {
@@ -497,9 +499,122 @@ blockquote {
 .sixth-item {
     padding: 0;
 }
-.card:nth-child(3) {
+.third_card {
     display: block;
 }
+
+/* Product */
+
+.slide {
+    margin: 0 auto;
+    background: #F7F7F7;
+    background-size: cover;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 777px;
+}
+.dashicons_left,
+.dashicons_right {
+    background: rgba(42, 42, 42, 0.15);
+}
+.moschino {
+    border: 1px solid #EAEAEA;
+    text-align: center;
+    padding-bottom: 65px;
+    margin-top: -64px;
+    background: white;
+    z-index: 1;
+    position: relative;
+}
+.high_heading {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 17px;
+    color: #F16D7F;
+    padding-top: 64px;
+    padding-bottom: 12px;
+}
+.red_line {
+    background: #EF5B70;
+    width: 63px;
+    height: 3px;
+    margin: 0 auto;
+}
+.moschino_heading {
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 22px;
+    color: #4D4D4D;
+    padding-top: 12px;
+    padding-bottom: 48px;
+}
+.moschino_paragraph {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 17px;
+    color: #5E5E5E;
+    padding-bottom: 32px;
+    max-width: 555px;
+    margin: 0 auto;
+}
+.price {
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 29px;
+    color: #EF5B70;
+    padding-bottom: 65px;
+    
+}
+.grey_line {
+    background: #EAEAEA;
+    width: 641px;
+    height: 1px;
+    margin: 0 auto;
+}
+.moschino_list {
+    display: flex;
+    justify-content: center;
+    padding-top: 65px;
+    padding-bottom: 49px;
+    list-style-type: none;
+}
+.moschino_list_item {
+    padding-right: 9px;
+    padding-left: 23px;
+    font-size: 14px;
+    line-height: 17px;
+    color: #6F6E6E;
+}
+.moschino_button {
+    border: 1px solid #FF6A6A;
+    width: 210px;
+    height: 47px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.moschino_button_text {
+    font-size: 16px;
+    line-height: 19px;
+    color: #F26376;
+    
+}
+.moschino_button img {
+    padding-right: 23px;
+}
+.products_block {
+    padding-top: 129px;
+    display: grid;
+    grid-template-columns: 360px 360px 360px;
+    grid-template-rows: 581px;
+    grid-gap: 30px;
+    padding-bottom: 128px;
+    justify-content: center;
+}
+
+
 
 @media (max-width: 1024px) {
     .header_block {
@@ -511,7 +626,7 @@ blockquote {
         
     }
     .heading {
-        height: 78px;
+        height: 92px;
     }
     .heading div:first-child  {
         font-size: 44px;
@@ -522,9 +637,7 @@ blockquote {
         line-height: 29px;
         margin-top: 25px;
     }
-    .brand_block {
-        
-    }
+    
     .blocks {
         grid-template-columns: 232px 232px 232px;
         grid-template-rows: 168px 116px;
@@ -566,8 +679,29 @@ blockquote {
         grid-template-columns: 360px 360px;
         grid-template-rows: repeat(4, 580px);
     }
-    .card:nth-child(3) {
+    .third_card {
         display: none;
+    }
+    .slide {
+        min-height: 624px;
+    }
+    .slide img {
+        width: 61%;
+    }
+    .moschino {
+        margin-top: 0;
+    }
+    .products_block {
+        grid-template-columns: 360px 360px;
+        grid-template-rows: 581px;
+        grid-gap: 16px;
+    }
+    .card_right {
+        display: none;
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 1;
+        grid-row-end: 1;
     }
 }
 
@@ -584,12 +718,13 @@ blockquote {
     }
     .brandInsideWrap {
         min-height: 363px;
-        display: block;
-        
+        display: block;        
     }
     .brand_block {
         background-color: #F1E4E6;
         min-height: inherit;
+        padding: 0;
+        justify-content: center;
     }
     .brand_image {
         display: none;
@@ -618,8 +753,6 @@ blockquote {
     }
     .feedback {
         flex-direction: column;
-        padding-top: 54px;
-        padding-bottom: 110px;
         padding: 54px 8px 110px 8px;
     }
     .subscribe {
@@ -679,7 +812,63 @@ blockquote {
         grid-template-columns: 360px;
         grid-template-rows: repeat(8, 580px);
     }
-    .card:nth-child(3) {
+    .third_card {
         display: none;
+    }
+    .products_block {
+        display: grid;
+        grid-template-columns: 360px;
+        grid-template-rows: 581px 581px;
+        grid-gap: 1px;
+        padding: 64px 8px;
+    }
+    .grey_line {
+        max-width: 175px;
+    }
+    .slide {
+        min-height: 624px;
+    }
+    .slide img {
+        width: 100%;
+    }
+    .dashicons_left {
+        position: absolute;
+    }
+    .dashicons_right {
+        position: absolute;
+        right: 0px;
+    }
+    .moschino {
+        margin-top: 0px;
+    }
+    .moschino_heading {
+        padding-bottom: 31px;
+    }
+    .moschino_paragraph {
+        max-width: 326px;
+    }
+    .price {
+        padding-bottom: 32px;
+    }
+    .moschino_list {
+        padding-top: 49px;
+        padding-bottom: 64px;
+    }
+    .moschino_list_item {
+        font-size: 10px;
+        line-height: 21px;
+    }
+    .upper_item {
+        padding-left: 0px;
+    }
+    .card_center {
+        display: none;
+    }
+    .card_right {
+        display: block;
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 2;
+        grid-row-end: 3;
     }
 }
