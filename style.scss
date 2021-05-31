@@ -151,79 +151,51 @@ body {
     display: grid;
     grid-gap: 30px;
     padding-top: 65px;
-    grid-template-columns: minmax(232px, 360px) minmax(232px, 360px) minmax(232px, 360px);
-    grid-template-areas:
-        "blocks_item_women blocks_item_men blocks_item_kids"
-        "blocks_item_last blocks_item_last blocks_item_last";
-    grid-template-rows: minmax(168px, 260px) minmax(116px, 180px);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 260px 180px;
     justify-content: center;
 }
-
-.blocks_item_women {
-    position: relative;
-    background-image: url(img/women.png) no-repeat;
-    background-position: center;
-}
-.blocks_women {
-    grid-area: blocks_item_women;
+.blocks_item img {
     position: absolute;
-    top: 105px;
-    left: 103px;
-    text-align: center;
-    
+    top: 0;
+    right: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
 }
+.blocks_item {
+    position: relative;    
+}
+.blocks_item_last {
+    grid-column: 1/-1;
+}
+.blocks_tittle {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
 .blocks_heading {
     font-size: 16px;
     color: #FFFFFF;
     line-height: 19px;
 }
-.blocks_item_men{
-    grid-area: blocks_item_men;
-    position: relative;
-    background-image: url(img/men.png) no-repeat;
-    background-position: center;
-}
-.blocks_men {
-    position: absolute;
-    top: 105px;
-    left: 125px;
-    text-align: center;
-}
-.blocks_item_kids {
-    grid-area: blocks_item_kids;
-    position: relative;
-    background-image: url(img/kids.png) no-repeat;
-    background-position: center;  
-}
-.blocks_kids {
-    position: absolute;
-    top: 105px;
-    left: 123px;
-    text-align: center;
-}
-
-.blocks_item_last {    
-    grid-area: blocks_item_last;
-    position: relative;  
-    background-image: url(img/accesories.png) no-repeat;
-    background-position: center; 
-}
-.blocks_accesories {
-    position: absolute;
-    top: 65px;
-    left: 490px;
-    text-align: center;
-    width: 180px;
-}
-
 .blocks_text {
     font-size: 24px;
     line-height: 29px;
     color:$headingColor;
     font-weight: 300;
 }
+
+/* FETURED */
 .fetured {
     padding-top: 96px;
+    padding-bottom: 48px;
     text-align: center;
 }
 .heading_fetured {
@@ -235,13 +207,19 @@ body {
     @extend %often-font;
     color: #9F9F9F;
 }
-.cards_block {
+
+/* PRODUCTS */
+.products_cards_block {
     display:grid;
     grid-gap: 30px;
     grid-template-columns: 360px 360px 360px;
-    grid-template-rows: 581px 581px 581px;
+    grid-template-rows: 581px 581px;
     justify-content: center;
-    padding-top: 48px;
+}
+.cards_block {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
 }
 .card_heading {
     font-size: 13px;
@@ -261,10 +239,12 @@ body {
 .card {
     background-color: #F8F8F8;
     display: block;
+    
 }
 .card img {
     display: block;
     width: 100%;
+    
 }
 .card_price {
     @extend %middle-font;
@@ -273,16 +253,48 @@ body {
     padding-top: 18px;
     padding-bottom: 20px;
 }
+.womenBlackSuit_card {
+    position: relative;
+}
+.card__greyMod {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    background: rgba(58, 56, 56, 0.86);
+    width: 360px;
+    height: 420px;
+    position: absolute;
+    top: 0;
+    right: 0;  
+    img {
+        width: 27px;
+    }     
+}
+.borderCard {
+    border: 1px solid #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 14px 16px 12px 13px;
+    div {
+        padding-left: 11px;
+        font-size: 14px;
+        line-height: 17px;
+        color: #FFFFFF;
+    }
+}
 .products_button {
     text-align: center;
-    padding-top: 48.5px;
+    padding-top: 63px;
+    padding-bottom: 96px;
 }
 .button {
     text-decoration: none;
     @extend %middle-font;
-    color: #F26376;
+    color: #FFFFFF;
     border: 1px solid #FF6A6A;
     padding: 14px 38px;
+    background-color: #F16D7F;
 }
 .benefits {
     background-color: #222224;
@@ -294,7 +306,6 @@ body {
     grid-template-columns: 360px 360px 360px;
     grid-gap: 30px;
     justify-content: center;
-    margin-top: 100px;
     padding-top: 103px;
     padding-bottom: 104px;
 }
@@ -493,6 +504,7 @@ blockquote {
 }
 .pagination_block {
     padding-top: 48.5px;
+    padding-bottom: 96.5px;
 }
 .pink-link {
     color: #EF5B70;
@@ -500,9 +512,6 @@ blockquote {
 .ellipsis,
 .sixth-item {
     padding: 0;
-}
-.third_card {
-    display: block;
 }
 
 /* Product */
@@ -892,10 +901,27 @@ blockquote {
         margin-top: 25px;
     }
     
+    /* BLOCKS */
     .blocks {
-        grid-template-columns: 232px 232px 232px;
-        grid-template-rows: 168px 116px;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 167px 116px;
         grid-gap: 20px;
+        padding-right: 16px;
+        padding-left: 16px;
+    }
+    .blocks_item_last {
+        grid-column: 1/-1;
+    }
+    
+    .fetured {
+        padding-top: 155px;
+        padding-bottom: 73px;
+    }
+    .cards_block {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+        padding-right: 16px;
+        padding-left: 16px;
     }
     .benefits_block {
         grid-template-columns: 1fr;
@@ -928,10 +954,10 @@ blockquote {
         padding-right: 0;
         padding-left: 15px;
     }    
-    .cards_block {
+    .products_cards_block {
         grid-gap: 16px;
         grid-template-columns: 360px 360px;
-        grid-template-rows: repeat(4, 580px);
+        grid-template-rows: repeat(3, 580px);
     }
     .third_card {
         display: none;
@@ -1023,6 +1049,9 @@ blockquote {
     .registrationForm_check {
         display: inline-block;
     }    
+    .whiteMenShorts_card {
+        display: none;
+    }
 }    
 
 @media (max-width: 661px) {
@@ -1066,6 +1095,19 @@ blockquote {
     .brandInsideWrap > div {
         width: 100%;
     }
+    /* BLOCKS */
+
+    .blocks {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 247px) 111px;
+    row-gap: 32px;
+    padding-left: 16px;
+    padding-right: 16px;
+    }
+
+
+
+    /* BENEFITS */
     .benefits_block {
         grid-template-columns: 1fr;
         padding: 48px 13px 81px 14px;
@@ -1127,12 +1169,12 @@ blockquote {
     .filter_list_item img {
         padding-left: 5px;
     }
-    .cards_block {
+    .products_cards_block {
         grid-gap: 16px;
         grid-template-columns: 360px;
-        grid-template-rows: repeat(8, 580px);
+        grid-template-rows: repeat(6, 580px);
     }
-    .third_card {
+    .whiteMenShorts_card {
         display: none;
     }
     .products_block {
@@ -1191,6 +1233,18 @@ blockquote {
         grid-row-start: 2;
         grid-row-end: 3;
     }
+    /* CATALOG */
+    .cards_block {
+        padding-left: 8px;
+        padding-right: 8px;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(8, 580px);
+    }
+    /* PAGINATION*/
+    .pagination_block {
+        padding-bottom: 64px;
+    }
+
     /* Cart */
     .shopping,
     .registration {
